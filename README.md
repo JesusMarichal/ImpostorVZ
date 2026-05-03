@@ -83,3 +83,5 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más 
 ---
 
 *Esta documentación es preliminar y puede actualizarse durante el desarrollo.*
+
+Desarrollado por: Eduar Marcano - Jesus Marichal
