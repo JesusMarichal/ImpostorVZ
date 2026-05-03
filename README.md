@@ -2,7 +2,7 @@
 
 ## Descripción del Juego
 
-ImpostorVZ es un juego de deducción social y verbal desarrollado en Flutter para plataformas móviles iOS y Android. En este juego, la mayoría de los jugadores comparten una palabra secreta, mientras que uno o más son "impostores" que no la conocen. El objetivo es identificar al impostor mediante pistas verbales: cada jugador da una palabra relacionada con la palabra secreta, sin revelarla directamente. Los impostores intentan pasar desapercibidos dando pistas falsas o genéricas.
+ImpostorVZ es un juego de deducción social y verbal desarrollado en React Native para plataformas móviles iOS y Android. En este juego, la mayoría de los jugadores comparten una palabra secreta, mientras que uno o más son "impostores" que no la conocen. El objetivo es identificar al impostor mediante pistas verbales: cada jugador da una palabra relacionada con la palabra secreta, sin revelarla directamente. Los impostores intentan pasar desapercibidos dando pistas falsas o genéricas.
 
 El juego fomenta la creatividad, la observación y la comunicación estratégica en un entorno multijugador local o en línea.
 
@@ -38,44 +38,49 @@ El juego fomenta la creatividad, la observación y la comunicación estratégica
 - No se permiten pistas que revelen la palabra (ej. sinónimos directos).
 - Tiempo límite por ronda para mantener el ritmo.
 
-## Implementación en Flutter
+## Implementación en React Native
 
 ### Arquitectura de la Aplicación
-La aplicación se desarrollará utilizando Flutter, aprovechando su capacidad para crear interfaces de usuario nativas en iOS y Android. La arquitectura seguirá el patrón Provider para la gestión de estado, con separación de capas:
+La aplicación se desarrollará utilizando React Native, aprovechando su capacidad para crear interfaces móviles nativas desde JavaScript/TypeScript. La arquitectura seguirá un patrón de capas con separación entre UI, lógica de negocio y datos:
 
-- **UI Layer**: Widgets de Flutter para pantallas, botones, animaciones.
-- **Business Logic Layer**: Lógica del juego, estados de jugadores, tareas.
-- **Data Layer**: Almacenamiento local de configuraciones, puntuaciones.
+- **UI Layer**: Componentes de React Native para pantallas, botones, animaciones.
+- **Business Logic Layer**: Lógica del juego, estados de jugadores, rondas y votaciones.
+- **Data Layer**: Almacenamiento local de configuraciones y ajustes de partida.
 
 ### Pantallas Principales
 1. **Menú Principal**: Selección de modo (local, en línea), configuración de partida.
-2. **Sala de Espera**: Lista de jugadores, chat, inicio de partida.
-3. **Juego**: Vista del mapa, minimapa, lista de tareas, chat de emergencia.
-4. **Votación**: Interfaz para votar, ver cuerpos reportados.
-5. **Fin de Partida**: Resultados, estadísticas.
+2. **Sala de Espera**: Lista de jugadores, chat y botón para iniciar la partida.
+3. **Ronda de Pistas**: Entrada de pistas, historial de palabras dadas, temporizador.
+4. **Discusión y Votación**: Lista de jugadores, votos y resultados.
+5. **Fin de Partida**: Resultados y estadísticas.
 
 ### Tecnologías Utilizadas
-- **Flutter**: Framework principal.
-- **Dart**: Lenguaje de programación.
-- **Provider**: Para gestión de estado.
-- **WebSocket** o **Firebase**: Para multijugador en línea.
-- **SQLite** o **SharedPreferences**: Para almacenamiento local.
+- **React Native**: Framework principal.
+- **JavaScript** o **TypeScript**: Lenguaje de programación.
+- **React Navigation**: Navegación entre pantallas.
+- **Redux** o **Context API**: Para gestión de estado.
+- **Socket.IO** o **Firebase Realtime Database**: Para multijugador en línea.
+- **AsyncStorage**: Para almacenamiento local de configuraciones.
 
 ### Requisitos del Sistema
-- Flutter SDK 3.0+
-- Dart 2.19+
-- Android Studio o Xcode para desarrollo nativo.
+- Node.js 18+ o 20+
+- npm o Yarn
+- React Native CLI o Expo CLI
+- Android Studio con Android SDK (para Android)
+- Xcode (para iOS, solo en macOS)
 
 ### Instalación y Ejecución
 1. Clona el repositorio.
-2. Ejecuta `flutter pub get` para instalar dependencias.
-3. Ejecuta `flutter run` para iniciar la aplicación en un emulador o dispositivo.
+2. Instala dependencias con `npm install` o `yarn install`.
+3. Inicia el proyecto:
+   - Con React Native CLI: `npx react-native run-android` o `npx react-native run-ios`
+   - Con Expo: `npx expo start`
 
 ### Contribución
 Para contribuir al desarrollo:
 - Reporta bugs en issues.
 - Envía pull requests con mejoras.
-- Sigue las guías de estilo de Flutter.
+- Sigue las guías de estilo de React Native.
 
 ### Licencia
 Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
